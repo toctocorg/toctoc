@@ -1,16 +1,22 @@
 "use client";
 
+import { useIsFetching } from "@tanstack/react-query";
 import { Field, Form, Formik, type FieldAttributes } from "formik";
 import tw from "tailwind-styled-components";
 import { useContainer } from "~/core/react";
 import { Deal_Message_Controller } from "~/modules/exchange/Deal_Message.controller";
 import { Deal_Message_Repository } from "~/modules/exchange/Deal_Message.repository";
+import { Deal_QueryKeys } from "~/modules/exchange/queryKeys";
 import { useDeal_Value } from "../Deal.context";
 
 //
 
 export function Deal_Discussion_Form() {
   const [deal] = useDeal_Value();
+
+  const query_count = useIsFetching({
+    queryKey: Deal_QueryKeys.messages(deal.get("id")),
+  });
 
   const container = useContainer()
     .createChildContainer()
@@ -37,7 +43,7 @@ export function Deal_Discussion_Form() {
         <Form className="w-full">
           <Input
             name="message"
-            disabled={isSubmitting}
+            disabled={isSubmitting || query_count > 0}
             placeholder="Envoie un Message…"
           />
         </Form>

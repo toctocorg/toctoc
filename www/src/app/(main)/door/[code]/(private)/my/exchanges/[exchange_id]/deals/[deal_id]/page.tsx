@@ -5,9 +5,8 @@ import tw from "tailwind-styled-components";
 import { Deal_Provider, Exchange_Provider } from "../Deal_Provider";
 import { Deal_Discussion } from "./Deal_Discussion";
 import { Deal_Discussion_Form } from "./Deal_Discussion_Form";
-import { NavControlGroup } from "./NavControlGroup";
 import { SendActionGroup } from "./SendActionGroup";
-import { Thread_Avatar } from "./page.client";
+import { Scrollable_Part, Thread_Avatar } from "./page.client";
 
 //
 
@@ -37,7 +36,6 @@ export default async function Page({
           <Deal_Provider id={deal_id}>
             <Header>
               <Thread_Avatar />
-              <NavControlGroup exchange_id={exchange_id} />
             </Header>
 
             <Scrollable_Part>
@@ -55,13 +53,6 @@ export default async function Page({
     </Main>
   );
 }
-
-const Scrollable_Part = tw.div`
-  -mr-6
-  overflow-y-auto
-  py-4
-  pr-5
-`;
 
 const Sticky_Container = tw.div`
   sticky
