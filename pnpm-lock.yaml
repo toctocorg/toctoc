@@ -245,7 +245,7 @@ importers:
         version: 2.2.1
       tailwind-variants:
         specifier: 0.2.1
-        version: 0.2.1(tailwindcss@3.4.1)
+        version: 0.2.1(tailwindcss@3.4.2)
       ts-pattern:
         specifier: 5.0.8
         version: 5.0.8
@@ -308,8 +308,8 @@ importers:
         specifier: 3.2.5
         version: 3.2.5
       tailwindcss:
-        specifier: 3.4.1
-        version: 3.4.1
+        specifier: 3.4.2
+        version: 3.4.2
       tsx:
         specifier: 4.7.1
         version: 4.7.1
@@ -337,10 +337,10 @@ importers:
         version: link:../../../@douglasduteil/config/tailwindcss
       '@tailwindcss/typography':
         specifier: 0.5.11
-        version: 0.5.11(tailwindcss@3.4.1)
+        version: 0.5.11(tailwindcss@3.4.2)
       tailwindcss:
-        specifier: 3.4.1
-        version: 3.4.1
+        specifier: 3.4.2
+        version: 3.4.2
     devDependencies:
       '@1.config/typescript':
         specifier: workspace:*
@@ -688,7 +688,7 @@ importers:
         version: 7.0.0(react@18.2.0)
       tailwind-variants:
         specifier: 0.2.1
-        version: 0.2.1(tailwindcss@3.4.1)
+        version: 0.2.1(tailwindcss@3.4.2)
       ts-pattern:
         specifier: 5.0.8
         version: 5.0.8
@@ -712,8 +712,8 @@ importers:
         specifier: 3.2.5
         version: 3.2.5
       tailwindcss:
-        specifier: 3.4.1
-        version: 3.4.1
+        specifier: 3.4.2
+        version: 3.4.2
       typescript:
         specifier: 5.4.3
         version: 5.4.3
@@ -790,7 +790,7 @@ importers:
         version: 7.0.0(react@18.2.0)
       tailwind-variants:
         specifier: 0.2.1
-        version: 0.2.1(tailwindcss@3.4.1)
+        version: 0.2.1(tailwindcss@3.4.2)
       ts-pattern:
         specifier: 5.0.8
         version: 5.0.8
@@ -814,8 +814,8 @@ importers:
         specifier: 3.2.5
         version: 3.2.5
       tailwindcss:
-        specifier: 3.4.1
-        version: 3.4.1
+        specifier: 3.4.2
+        version: 3.4.2
       typescript:
         specifier: 5.4.3
         version: 5.4.3
@@ -956,7 +956,7 @@ importers:
         version: 17.5.0(react-dom@18.2.0)(react@18.2.0)
       tailwind-variants:
         specifier: 0.2.1
-        version: 0.2.1(tailwindcss@3.4.1)
+        version: 0.2.1(tailwindcss@3.4.2)
       ts-pattern:
         specifier: 5.0.8
         version: 5.0.8
@@ -983,8 +983,8 @@ importers:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
       tailwindcss:
-        specifier: 3.4.1
-        version: 3.4.1
+        specifier: 3.4.2
+        version: 3.4.2
       typescript:
         specifier: 5.4.3
         version: 5.4.3
@@ -1091,7 +1091,7 @@ importers:
         version: 0.2.2(react@18.2.0)
       tailwind-variants:
         specifier: 0.2.1
-        version: 0.2.1(tailwindcss@3.4.1)
+        version: 0.2.1(tailwindcss@3.4.2)
       ts-pattern:
         specifier: 5.0.8
         version: 5.0.8
@@ -1115,8 +1115,8 @@ importers:
         specifier: 3.2.5
         version: 3.2.5
       tailwindcss:
-        specifier: 3.4.1
-        version: 3.4.1
+        specifier: 3.4.2
+        version: 3.4.2
       typescript:
         specifier: 5.4.3
         version: 5.4.3
@@ -1205,7 +1205,7 @@ importers:
         version: 0.2.2(react@18.2.0)
       tailwind-variants:
         specifier: 0.2.1
-        version: 0.2.1(tailwindcss@3.4.1)
+        version: 0.2.1(tailwindcss@3.4.2)
       ts-pattern:
         specifier: 5.0.8
         version: 5.0.8
@@ -1229,8 +1229,8 @@ importers:
         specifier: 3.2.5
         version: 3.2.5
       tailwindcss:
-        specifier: 3.4.1
-        version: 3.4.1
+        specifier: 3.4.2
+        version: 3.4.2
       typescript:
         specifier: 5.4.3
         version: 5.4.3
@@ -1334,7 +1334,7 @@ importers:
         version: 0.2.2(react@18.2.0)
       tailwind-variants:
         specifier: 0.2.1
-        version: 0.2.1(tailwindcss@3.4.1)
+        version: 0.2.1(tailwindcss@3.4.2)
       ts-pattern:
         specifier: 5.0.8
         version: 5.0.8
@@ -1358,8 +1358,8 @@ importers:
         specifier: 3.2.5
         version: 3.2.5
       tailwindcss:
-        specifier: 3.4.1
-        version: 3.4.1
+        specifier: 3.4.2
+        version: 3.4.2
       typescript:
         specifier: 5.4.3
         version: 5.4.3
@@ -1445,7 +1445,7 @@ importers:
         version: 17.5.0(react-dom@18.2.0)(react@18.2.0)
       tailwind-variants:
         specifier: 0.2.1
-        version: 0.2.1(tailwindcss@3.4.1)
+        version: 0.2.1(tailwindcss@3.4.2)
       ts-pattern:
         specifier: 5.0.8
         version: 5.0.8
@@ -1469,8 +1469,8 @@ importers:
         specifier: 3.2.5
         version: 3.2.5
       tailwindcss:
-        specifier: 3.4.1
-        version: 3.4.1
+        specifier: 3.4.2
+        version: 3.4.2
       typescript:
         specifier: 5.4.3
         version: 5.4.3
@@ -1534,7 +1534,7 @@ importers:
         version: 0.2.2(react@18.2.0)
       tailwind-variants:
         specifier: 0.2.1
-        version: 0.2.1(tailwindcss@3.4.1)
+        version: 0.2.1(tailwindcss@3.4.2)
       ts-pattern:
         specifier: 5.0.8
         version: 5.0.8
@@ -1561,8 +1561,8 @@ importers:
         specifier: 3.2.5
         version: 3.2.5
       tailwindcss:
-        specifier: 3.4.1
-        version: 3.4.1
+        specifier: 3.4.2
+        version: 3.4.2
       typescript:
         specifier: 5.4.3
         version: 5.4.3
@@ -1586,13 +1586,13 @@ importers:
         version: 0.5.12(prettier@3.2.5)
       tailwind-variants:
         specifier: 0.2.1
-        version: 0.2.1(tailwindcss@3.4.1)
+        version: 0.2.1(tailwindcss@3.4.2)
       tailwindcss:
-        specifier: 3.4.1
-        version: 3.4.1
+        specifier: 3.4.2
+        version: 3.4.2
       tailwindcss-animate:
         specifier: 1.0.7
-        version: 1.0.7(tailwindcss@3.4.1)
+        version: 1.0.7(tailwindcss@3.4.2)
     devDependencies:
       postcss:
         specifier: 8.4.38
@@ -1835,13 +1835,13 @@ importers:
         version: 2.2.0(react-dom@18.2.0)(react@18.2.0)
       tailwind-variants:
         specifier: 0.2.1
-        version: 0.2.1(tailwindcss@3.4.1)
+        version: 0.2.1(tailwindcss@3.4.2)
       tailwindcss:
-        specifier: 3.4.1
-        version: 3.4.1
+        specifier: 3.4.2
+        version: 3.4.2
       tailwindcss-animate:
         specifier: 1.0.7
-        version: 1.0.7(tailwindcss@3.4.1)
+        version: 1.0.7(tailwindcss@3.4.2)
       ts-pattern:
         specifier: 5.0.8
         version: 5.0.8
@@ -6223,7 +6223,7 @@ packages:
       defer-to-connect: 2.0.1
     dev: true
 
-  /@tailwindcss/typography@0.5.11(tailwindcss@3.4.1):
+  /@tailwindcss/typography@0.5.11(tailwindcss@3.4.2):
     resolution: {integrity: sha512-ahOULqBQGCdSqL3vMNjH1R5cU2gxTh059fJIKF2enHXE8c/s3yKGDSKZ1+4poCr7BZRREJS8n5cCFmwsW4Ok3A==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
@@ -6232,7 +6232,7 @@ packages:
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       postcss-selector-parser: 6.0.10
-      tailwindcss: 3.4.1
+      tailwindcss: 3.4.2
     dev: false
 
   /@tanstack/match-sorter-utils@8.11.8:
@@ -13839,22 +13839,22 @@ packages:
       tailwind-merge: 1.14.0
     dev: false
 
-  /tailwind-variants@0.2.1(tailwindcss@3.4.1):
+  /tailwind-variants@0.2.1(tailwindcss@3.4.2):
     resolution: {integrity: sha512-2xmhAf4UIc3PijOUcJPA1LP4AbxhpcHuHM2C26xM0k81r0maAO6uoUSHl3APmvHZcY5cZCY/bYuJdfFa4eGoaw==}
     engines: {node: '>=16.x', pnpm: '>=7.x'}
     peerDependencies:
       tailwindcss: '*'
     dependencies:
       tailwind-merge: 2.2.2
-      tailwindcss: 3.4.1
+      tailwindcss: 3.4.2
     dev: false
 
-  /tailwindcss-animate@1.0.7(tailwindcss@3.4.1):
+  /tailwindcss-animate@1.0.7(tailwindcss@3.4.2):
     resolution: {integrity: sha512-bl6mpH3T7I3UFxuvDEXLxy/VuFxBk5bbzplh7tXI68mwMokNYd1t9qPBHlnyTwfa4JGC4zP516I1hYYtQ/vspA==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
     dependencies:
-      tailwindcss: 3.4.1
+      tailwindcss: 3.4.2
     dev: false
 
   /tailwindcss@3.4.0:
@@ -13888,8 +13888,8 @@ packages:
       - ts-node
     dev: true
 
-  /tailwindcss@3.4.1:
-    resolution: {integrity: sha512-qAYmXRfk3ENzuPBakNK0SRrUDipP8NQnEY6772uDhflcQz5EhRdD7JNZxyrFHVQNCwULPBn6FNPp9brpO7ctcA==}
+  /tailwindcss@3.4.2:
+    resolution: {integrity: sha512-1kIzVecynNKMhhX8mPTOwTkkVHupUTMbEvk4n1ByxdM8sQTJ8fE41Y4TdORG6GmiVXHhfZ/++0hiIFJFwfadsA==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:

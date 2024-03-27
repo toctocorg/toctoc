@@ -7,7 +7,7 @@
   "dependencies": {
     "@douglasduteil/config...tailwindcss": "workspace:*",
     "@tailwindcss/typography": "0.5.11",
-    "tailwindcss": "3.4.1"
+    "tailwindcss": "3.4.2"
   },
   "devDependencies": {
     "@types/node": "20.11.30",

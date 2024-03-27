@@ -75,7 +75,7 @@
     "eslint-config-next": "14.1.4",
     "postcss": "8.4.38",
     "prettier": "3.2.5",
-    "tailwindcss": "3.4.1",
+    "tailwindcss": "3.4.2",
     "tsx": "4.7.1",
     "typescript": "5.4.3"
   }
