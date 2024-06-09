@@ -33,6 +33,7 @@ export function Mutate_Exchange({
         return: exchange.return_id ?? "",
         is_online: exchange.is_online,
         type: exchange.type,
+        location: exchange.location ?? "Paris",
       }}
       onSubmit={async (values) => {
         await do_update.mutateAsync({
@@ -43,7 +44,7 @@ export function Mutate_Exchange({
               ? new Date(values.expiry_date)
               : null,
         });
-
+        console.log(values.location);
         await utils.exchanges.by_id.refetch(exchange.id);
         await utils.exchanges.invalidate();
 
@@ -56,6 +57,10 @@ export function Mutate_Exchange({
             {(input_props) => (
               <FrenchLocationField
                 defaultValue={exchange.location ?? "Paris"}
+                value={formik.values.location}
+                onChange={(value: string) =>
+                  formik.setFieldValue("location", value)
+                }
                 {...input_props}
               />
             )}
