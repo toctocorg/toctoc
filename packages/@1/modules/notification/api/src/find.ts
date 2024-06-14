@@ -31,6 +31,20 @@ export default next_auth_procedure
             },
           },
         },
+        exchange_message: {
+          select: {
+            exchange_id: true,
+            exchange: {
+              select: { owner: { select: { profile_id: true } }, title: true },
+            },
+            message: {
+              select: {
+                author: { select: { name: true } },
+                thread_id: true,
+              },
+            },
+          },
+        },
       },
     });
 

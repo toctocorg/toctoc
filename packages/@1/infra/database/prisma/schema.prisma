@@ -189,6 +189,7 @@ model Exchange {
   return_id   String?
   title       String
   type        ExchangeType
+
   //
 
   created_at DateTime @default(now())
@@ -196,6 +197,8 @@ model Exchange {
   //
 
   bookmarked_exchanges Bookmark[] @relation("BookmarkedExchanges")
+
+  message_notifications ExchangeMessageNotification[]
 }
 
 enum ExchangeType {
@@ -355,7 +358,8 @@ model Message {
   thread    Thread  @relation(fields: [thread_id], references: [id], onDelete: Cascade)
   thread_id String
 
-  notifications InboxMessageNotification[]
+  inbox_notifications    InboxMessageNotification[]
+  exchange_notifications ExchangeMessageNotification[]
 
   //
 
@@ -380,7 +384,8 @@ model Notification {
   read_at  DateTime?
   type     NotificationType
 
-  inbox_message InboxMessageNotification?
+  inbox_message    InboxMessageNotification?
+  exchange_message ExchangeMessageNotification?
 
   //
 
@@ -388,14 +393,26 @@ model Notification {
 }
 
 enum NotificationType {
+  EXCHANGE_NEW_MESSAGE
   INBOX_NEW_MESSAGE
+}
+
+model ExchangeMessageNotification {
+  notification    Notification @relation(fields: [notification_id], references: [id], onDelete: Cascade)
+  notification_id String       @unique
+  message         Message?     @relation(fields: [message_id], references: [id], onDelete: Cascade)
+  message_id      String?
+  exchange        Exchange?    @relation(fields: [exchange_id], references: [id], onDelete: Cascade)
+  exchange_id     String?
+
+  @@unique(name: "unique_message_notification", fields: [message_id, notification_id])
 }
 
 model InboxMessageNotification {
   notification    Notification @relation(fields: [notification_id], references: [id], onDelete: Cascade)
   notification_id String       @unique
   message         Message?     @relation(fields: [message_id], references: [id], onDelete: Cascade)
-  message_id      String
+  message_id      String?
 
   @@unique(name: "unique_message_notification", fields: [message_id, notification_id])
 }

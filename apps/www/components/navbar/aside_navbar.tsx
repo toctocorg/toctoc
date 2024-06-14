@@ -19,7 +19,10 @@ import {
 import { tv } from "tailwind-variants";
 import { SubNav_Bookmarks } from "./SubNav_Bookmarks";
 import { Li_Link } from "./aside_navbar.client";
-import { NewMessage_Indicator } from "./notification_indicator.client";
+import {
+  NewsInExchange_Indicator,
+  NewsInMessage_Indicator,
+} from "./notification_indicator.client";
 
 //
 
@@ -60,7 +63,7 @@ export function Student_NavBar({
           icon={<Exchange />}
           href="./exchanges/inbox"
         >
-          Les échanges
+          Les échanges <NewsInExchange_Indicator />
         </Li_Link>
         <Li_Link icon={<Bookmark />} href="./bookmarks">
           Sauvegardes
@@ -82,7 +85,7 @@ export function Student_NavBar({
           </Li_Link>
         </SubNav_Bookmarks>
         <Li_Link onClick={onClickLink} icon={<Envelope />} href="./inbox">
-          Messagerie <NewMessage_Indicator />
+          Messagerie <NewsInMessage_Indicator />
         </Li_Link>
         <Li_Link
           onClick={onClickLink}

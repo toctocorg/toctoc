@@ -25,6 +25,7 @@
     "@1.modules/trpc": "workspace:*",
     "@douglasduteil/nextauth...trpc.prisma": "workspace:*",
     "@trpc/server": "10.45.2",
+    "ts-pattern": "5.2.0",
     "zod": "3.23.8"
   },
   "devDependencies": {

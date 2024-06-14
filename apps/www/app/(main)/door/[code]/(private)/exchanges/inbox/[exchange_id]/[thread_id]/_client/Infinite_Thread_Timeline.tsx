@@ -43,7 +43,8 @@ export default function Infinite_Thread_Timeline({
     .parse(useParams(), { path: ["useParams()"] });
   const { thread_id } = params;
 
-  const thread_update = TRPC_React.exchanges.me.thread_update.useMutation();
+  const last_seen_thread_update =
+    TRPC_React.student.me.last_seen_by_thread_id.useMutation();
   const query_thread = TRPC_React.inbox.thread.by_id.useQuery(thread_id);
   const query_info = TRPC_React.inbox.thread.messages.useInfiniteQuery(
     {
@@ -58,7 +59,8 @@ export default function Infinite_Thread_Timeline({
     if (!scroll_target_ref.current) {
       return;
     }
-    thread_update.mutate({ thread_id });
+
+    utils.notification.count_unread.invalidate();
     scroll_target_ref.current.scrollIntoView({
       behavior: "smooth",
       block: "end",
@@ -73,6 +75,10 @@ export default function Infinite_Thread_Timeline({
     query_thread.data?.updated_at,
     scroll_target_ref,
   ]);
+
+  useLayoutEffect(() => {
+    last_seen_thread_update.mutate({ thread_id, type: "INBOX_NEW_MESSAGE" });
+  }, [scroll_target_ref]);
 
   const { data: session, status } = useSession();
   const invalidate = useCallback(async () => {

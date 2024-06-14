@@ -1,7 +1,11 @@
 //
 
 import { MenuBurger } from ":components/burger";
-import { Notification_DotIndicator } from ":components/navbar/notification_indicator.client";
+import {
+  ExchangeNews_DotIndicator,
+  MessageNews_DotIndicator,
+  Notification_DotIndicator,
+} from ":components/navbar/notification_indicator.client";
 import { MobileNavBar } from ":components/shell/MobileNavBar";
 import { TRPC_SSR } from ":trpc/server";
 import { getServerSession } from "@1.modules/auth.next";
@@ -77,13 +81,15 @@ async function UserNavGroup({ className }: ComponentPropsWithoutRef<"nav">) {
           <Bell className={icon()} />
           <Notification_DotIndicator />
         </Link>
-        <Link href={`/@~/inbox`} className="flex">
+        <Link href={`/@~/inbox`} className="relative flex">
           <VisuallyHidden>Messages</VisuallyHidden>
           <Messenger className={icon()} />
+          <MessageNews_DotIndicator />
         </Link>
-        <Link href={`/@~/exchanges/inbox`} className="flex">
+        <Link href={`/@~/exchanges/inbox`} className="relative flex">
           <VisuallyHidden>Mes échanges</VisuallyHidden>
           <Exchange className={icon()} />
+          <ExchangeNews_DotIndicator />
         </Link>
         <MyStudentProfile profile={session.profile} />
       </nav>

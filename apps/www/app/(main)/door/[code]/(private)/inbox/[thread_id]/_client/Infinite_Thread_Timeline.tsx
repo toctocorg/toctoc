@@ -26,7 +26,8 @@ export default function Infinite_Thread_Timeline({
     .parse(useParams(), { path: ["useParams()"] });
   const { thread_id } = params;
 
-  const thread_update = TRPC_React.inbox.thread_update.useMutation();
+  const last_seen_thread_update =
+    TRPC_React.student.me.last_seen_by_thread_id.useMutation();
   const query_info = TRPC_React.inbox.thread.messages.useInfiniteQuery(
     {
       thread_id,
@@ -37,15 +38,14 @@ export default function Infinite_Thread_Timeline({
   ) as UseInfiniteQueryResult<{ data: Message }>;
 
   const thread_seen = useCallback(async () => {
-    // await thread_update.mutateAsync({ thread_id });
     await utils.inbox.find.refetch();
     await utils.inbox.by_thread_id.invalidate(thread_id);
     await utils.inbox.thread.by_id.invalidate(thread_id);
     await utils.notification.invalidate();
-  }, [thread_update, utils]);
+  }, [last_seen_thread_update, utils]);
 
   useLayoutEffect(() => {
-    thread_update.mutate({ thread_id });
+    last_seen_thread_update.mutate({ thread_id, type: "INBOX_NEW_MESSAGE" });
   }, [scroll_target_ref]);
 
   useLayoutEffect(() => {

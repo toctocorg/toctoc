@@ -59,7 +59,11 @@ export default async function Page({ params }: { params: Params }) {
     profile_id,
   });
 
-  await proxyClient.inbox.last_seen_by_thread_id.mutate(thread_id);
+  await proxyClient.student.me.last_seen_by_thread_id.mutate({
+    thread_id,
+    type: "INBOX_NEW_MESSAGE",
+  });
+
   await TRPC_SSR.inbox.thread.messages.prefetchInfinite({
     thread_id,
   });

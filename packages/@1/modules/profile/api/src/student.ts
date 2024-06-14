@@ -1,5 +1,7 @@
 import { Student_Schema, type Student } from "@1.modules/profile.domain";
 import { next_auth_procedure, router } from "@1.modules/trpc";
+import { NotificationType } from "@prisma/client";
+import { match } from "ts-pattern";
 import { z } from "zod";
 
 export const student_api_router = router({
@@ -24,6 +26,7 @@ export const student_api_router = router({
         },
       ) as Student;
     }),
+
   //
 
   me: router({
@@ -39,5 +42,69 @@ export const student_api_router = router({
           where: { profile_id },
         });
       }),
+
+    //
+
+    last_seen_by_thread_id: next_auth_procedure
+      .input(
+        z.object({
+          thread_id: z.string(),
+          type: z.enum([
+            NotificationType.EXCHANGE_NEW_MESSAGE,
+            NotificationType.INBOX_NEW_MESSAGE,
+          ]),
+        }),
+      )
+      .mutation(
+        async ({ ctx: { payload, prisma }, input: { thread_id, type } }) => {
+          const {
+            profile: { id: profile_id },
+          } = payload;
+          const last_seen_date = new Date();
+          const { id: student_id } = await prisma.student.findFirstOrThrow({
+            select: { id: true },
+            where: { profile_id },
+          });
+
+          return match(type)
+            .with(NotificationType.EXCHANGE_NEW_MESSAGE, () =>
+              prisma.$transaction([
+                prisma.notification.updateMany({
+                  data: { read_at: last_seen_date },
+                  where: {
+                    owner: { id: profile_id },
+                    exchange_message: { message: { thread_id } },
+                    type: NotificationType.EXCHANGE_NEW_MESSAGE,
+                  },
+                }),
+                prisma.exchangeThread.update({
+                  data: { last_seen_date },
+                  where: {
+                    owner_id_thread_id: { owner_id: student_id, thread_id },
+                  },
+                }),
+              ]),
+            )
+            .with(NotificationType.INBOX_NEW_MESSAGE, () =>
+              prisma.$transaction([
+                prisma.notification.updateMany({
+                  data: { read_at: last_seen_date },
+                  where: {
+                    owner: { id: profile_id },
+                    exchange_message: { message: { thread_id } },
+                    type: NotificationType.INBOX_NEW_MESSAGE,
+                  },
+                }),
+                prisma.inboxThread.update({
+                  data: { last_seen_date },
+                  where: {
+                    owner_id_thread_id: { owner_id: student_id, thread_id },
+                  },
+                }),
+              ]),
+            )
+            .exhaustive();
+        },
+      ),
   }),
 });

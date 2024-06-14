@@ -5,7 +5,7 @@ import { Loading_Placeholder } from ":components/placeholder/Loading_Placeholder
 import type { Params as ExchangeParams } from ":pipes/exchange_by_id";
 import { session_profile_id } from ":pipes/session_profile_id";
 import { type Params as ThreadParams } from ":pipes/thread_by_id";
-import { TRPC_Hydrate, TRPC_SSR } from ":trpc/server";
+import { TRPC_Hydrate, TRPC_SSR, proxyClient } from ":trpc/server";
 import { ExchangeProvider } from "@1.modules/exchange.ui/context";
 import { thread_recipient } from "@1.modules/inbox.domain/select";
 import to from "await-to-js";
@@ -68,6 +68,11 @@ export default async function Page({
     thread_id,
   });
   await TRPC_SSR.exchanges.me.inbox.by_thread_id.prefetch(thread_id);
+
+  await proxyClient.student.me.last_seen_by_thread_id.mutate({
+    thread_id,
+    type: "EXCHANGE_NEW_MESSAGE",
+  });
 
   const exchange = await TRPC_SSR.exchanges.by_id.fetch(exchange_id);
 
