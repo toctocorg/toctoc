@@ -2,7 +2,7 @@
   "name": "@1.config/turbo",
   "devDependencies": {
     "@douglasduteil/config...typescript": "workspace:*",
-    "@turbo/gen": "2.0.4",
+    "@turbo/gen": "1.13.4",
     "prettier": "3",
     "typescript": "5.4.5"
   }
