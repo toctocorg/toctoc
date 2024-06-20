@@ -1,16 +1,37 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalDependencies": ["**/.env.*local"],
-  "globalEnv": ["CI", "NODE_ENV"],
-  "pipeline": {
+  "globalDependencies": [
+    "**/.env.*local"
+  ],
+  "globalEnv": [
+    "CI",
+    "NODE_ENV"
+  ],
+  "tasks": {
     "@douglasduteil/nextauth...trpc.prisma#type-check": {
-      "dependsOn": ["@1.infra/database#type-check"]
+      "dependsOn": [
+        "@1.infra/database#type-check"
+      ]
     },
-    "@1.infra/database#type-check": { "dependsOn": ["generate"] },
-    "@1.modules/auth.api#type-check": { "dependsOn": ["^build"] },
-    "api#dev": { "cache": false },
+    "@1.infra/database#type-check": {
+      "dependsOn": [
+        "generate"
+      ]
+    },
+    "@1.modules/auth.api#type-check": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "api#dev": {
+      "cache": false
+    },
     "build": {
-      "dependsOn": ["^type-check", "^build", "type-check"],
+      "dependsOn": [
+        "^type-check",
+        "^build",
+        "type-check"
+      ],
       "outputs": [
         "!.next/cache/**",
         ".next/**",
@@ -20,16 +41,38 @@
     },
     "generate": {
       "cache": false,
-      "outputs": ["node_modules/@prisma/client/**"]
+      "outputs": [
+        "node_modules/@prisma/client/**"
+      ]
     },
-    "clean": { "cache": false },
-    "studio": { "cache": false },
-    "dev": { "persistent": true, "dependsOn": ["^build"] },
-    "lint": { "cache": false, "dependsOn": ["^build"] },
+    "clean": {
+      "cache": false
+    },
+    "studio": {
+      "cache": false
+    },
+    "dev": {
+      "persistent": true,
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "lint": {
+      "cache": false,
+      "dependsOn": [
+        "^build"
+      ]
+    },
     "type-check": {
-      "dependsOn": ["^type-check"],
-      "outputs": ["node_modules/.cache/tsc/**"]
+      "dependsOn": [
+        "^type-check"
+      ],
+      "outputs": [
+        "node_modules/.cache/tsc/**"
+      ]
     },
-    "www#dev": { "cache": false }
+    "www#dev": {
+      "cache": false
+    }
   }
 }
