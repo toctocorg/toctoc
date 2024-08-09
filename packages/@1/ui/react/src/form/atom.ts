@@ -43,8 +43,8 @@ export const input = tv({
       success: "border-success",
     },
     tv$size: {
-      base: `p-2.5 text-sm text-gray-900 focus:border-gray-500`,
-      xs: `p-2 text-xs text-gray-900 focus:border-gray-500`,
+      base: `p-2.5 text-gray-900 focus:border-gray-500`,
+      xs: `p-2 text-gray-900 focus:border-gray-500`,
     },
   },
   defaultVariants: {

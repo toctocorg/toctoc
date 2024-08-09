@@ -30,7 +30,7 @@ export function SignUp({ onSubmit }: SignUpProps) {
           </h1>
 
           <Field
-            className="h-8 rounded-sm border border-solid border-[#dddddd] px-3 py-2 text-xs placeholder-[#AAAAAA]"
+            className="h-8 max-w-[90%] rounded-sm border border-solid border-[#dddddd] px-3 py-2 placeholder-[#AAAAAA] md:text-xs"
             name="email"
             placeholder="Adresse email"
             required
@@ -67,7 +67,7 @@ export function Login({ onSubmit }: LoginProps) {
       {({ isSubmitting }) => (
         <Form className="flex flex-col items-center space-y-5">
           <Field
-            className="h-8 rounded-sm border border-solid border-[#dddddd] px-3 py-2 text-xs placeholder-[#AAAAAA]"
+            className="h-8 max-w-[90%] rounded-sm border border-solid border-[#dddddd] px-3 py-2 placeholder-[#AAAAAA] md:text-xs"
             name="email"
             placeholder="Adresse email"
             required
